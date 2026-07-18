@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Human Detection - Team Hydra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <span>🚁 Drone Grid</span><strong>System</strong>
+        </div>
+        <button id="themeToggle" class="theme-btn">Dark Mode</button>
+    </nav>
+
+    <div class="container">
+        <section class="video-section">
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>Live Target Analysis</h3>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <button id="startBtn" class="theme-btn" style="background: var(--accent-blue); color: white; border: none;">
+                            Select Drone Source
+                        </button>
+                        <span class="live-badge">LIVE</span>
+                    </div>
+                </div>
+                <div style="position: relative; width: 100%; height: 100%; background: #000; overflow: hidden;">
+                    <video id="sourceVideo" autoplay playsinline muted style="display: none;"></video>
+                    <canvas id="captureCanvas" style="display: none;"></canvas>
+                    <img id="processedFeed" alt="Waiting for source..." 
+                         style="width: 100%; height: 100%; object-fit: contain; opacity: 0.5;">
+                </div>
+            </div>
+        </section>
+
+        <section class="data-section">
+            <div class="card status-card" id="dangerCard">
+                <h3>Target Status</h3>
+                <div class="status-indicator">
+                    <span id="dangerIcon">🔍</span>
+                </div>
+                <h2 id="dangerText">SCANNING</h2>
+            </div>
+            <div class="card stat-card">
+                <span class="stat-icon">👥</span>
+                <div>
+                    <h3>Targets Identified</h3>
+                    <p id="humanCount">0</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="panel log-panel">
+            <div class="panel-header">
+                <h3>Grid Logs</h3>
+                <button id="clearLogs" class="clear-btn">Clear</button>
+            </div>
+            <div id="logContainer" class="log-container">
+                <div class="log-entry system">
+                    System Online. Waiting for targets...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

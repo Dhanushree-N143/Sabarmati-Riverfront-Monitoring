@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Waste Floater UI</title>
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+  <h1>Waste Floater Dashboard</h1>
+
+  <div id="tabs">
+    <button class="tab-button active" onclick="showTab('feed')">Video Feed</button>
+    <button class="tab-button" onclick="showTab('status')">Status</button>
+  </div>
+
+  <div id="feed" class="tab-content active">
+    <div id="video-area">
+      <div id="processed-container">
+        <img id="processed" src="/video_feed" alt="Processed frame" />
+        <div id="left-zone" class="zone-marker">L</div>
+        <div id="center-zone" class="zone-marker">C</div>
+        <div id="right-zone" class="zone-marker">R</div>
+      </div>
+    </div>
+    
+    <div id="detection-stats">
+        Frame Detections: <span id="detection-count">0</span>
+    </div>
+  </div>
+
+  <div id="status" class="tab-content">
+    <h2>Control & Status</h2>
+    <div class="status-grid">
+        <div class="status-item">
+            <p class="status-label">ESP32 Motor Controller IP:</p>
+            <p class="status-value" id="espIp">192.168.X.X</p>
+        </div>
+        <div class="status-item">
+            <p class="status-label">Roboflow Detection Status:</p>
+            <p class="status-value" id="detection-status">Waiting...</p>
+        </div>
+        <div class="status-item">
+            <p class="status-label">Latest AI Command Sent:</p>
+            <p class="status-value" id="latest-cmd-full">STOP (S)</p>
+        </div>
+        <div class="status-item">
+            <p class="status-label">Current Frontend Connection:</p>
+            <p class="status-value" id="ui-status">Idle</p>
+        </div>
+    </div>
+  </div>
+  <script src="static/script.js"></script>
+</body>
+</html>

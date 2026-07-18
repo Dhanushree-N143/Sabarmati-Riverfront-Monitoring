@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Waste Floater UI</title>
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+  <h1>Waste Floater Dashboard</h1>
+
+  <div id="tabs">
+    <button class="tab-button active" onclick="showTab('feed')">Video Feed</button>
+    <button class="tab-button" onclick="showTab('status')">Status</button>
+  </div>
+
+  <div id="feed" class="tab-content active">
+    <div id="video-area">
+      <div id="processed-container">
+        <img id="processed" src="/video_feed" alt="Processed frame" />
+        <div id="left-zone" class="zone-marker">L</div>
+        <div id="center-zone" class="zone-marker">C</div>
+        <div id="right-zone" class="zone-marker">R</div>
+      </div>
+    </div>
+    
+    <div id="detection-stats">
+        Frame Detections: <span id="detection-count">0</span>
+    </div>
+  </div>
+
+  <div id="status" class="tab-content">
+    <div id="control-info">
+        <h3>Control & Status</h3>
+        <p>ESP32 IP: <span id="espIp">192.168.X.X</span></p>
+        <p>Latest Command Sent: <span id="latest-cmd">S</span></p>
+        <p>Current Frontend Status: <span id="ui-status">Idle</span></p>
+    </div>
+  </div>
+
+  <script src="static/script.js"></script>
+</body>
+</html>

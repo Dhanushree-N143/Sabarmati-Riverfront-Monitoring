@@ -1,0 +1,7 @@
+Calibration notes:
+- Use pH buffers (4.00, 7.00) to capture V4 and V7 then compute slope/intercept:
+    a = (7.00 - 4.00) / (V7 - V4)
+    b = 7.00 - a * V7
+  Place a and b into esp32_motor_controller.ino pH calibration floats.
+
+- Turbidity: measure clear water Vclear (NTU=0) and sample with known turbidity to compute linear mapping.
