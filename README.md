@@ -113,11 +113,5 @@ This project contributes toward:
 
 Developed as a **Smart India Hackathon (SIH) 2025 – Hardware Edition Finalist Project**.
 
----
 
-
-This project is intended for educational, research, and innovation purposes. Please contact the project team before using or distributing any part of this work.
-
----
-
-### ⭐ If you found this project interesting, consider giving it a star on GitHub!
+###  If you found this project interesting, consider giving it a star on GitHub!
